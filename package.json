@@ -1,0 +1,43 @@
+{
+	"name": "pension",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon -e js,ejs -x",
+		"start-server": "node index.js"
+	},
+	"author": "Cy",
+	"license": "ISC",
+	"dependencies": {
+		"accesscontrol": "^2.2.1",
+		"bcrypt": "^3.0.7",
+		"bcrypt-nodejs": "*",
+		"bcryptjs": "*",
+		"body-parser": "*",
+		"cloudinary": "*",
+		"connect-ensure-login": "*",
+		"connect-flash": "*",
+		"cookie-parser": "*",
+		"cors": "*",
+		"ejs": "*",
+		"email-templates": "*",
+		"express": "*",
+		"express-session": "*",
+		"joi": "*",
+		"jsdom": "*",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "*",
+		"morgan": "*",
+		"multer": "*",
+		"multer-storage-cloudinary": "*",
+		"nodemailer": "*",
+		"nodemon": "*",
+		"passport": "*",
+		"passport-local": "*"
+	},
+	"devDependencies": {
+		"dotenv": "*"
+	}
+}

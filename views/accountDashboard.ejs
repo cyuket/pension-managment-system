@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
+<title>Veltrix - Responsive Bootstrap 4 Admin Dashboard</title>
+<meta content="Admin Dashboard" name="description">
+<meta content="Themesbrand" name="author">
+<link rel="shortcut icon" href="assets/images/favicon.ico">
+<!-- DataTables -->
+<link href="../plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+<link href="../plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css">
+<!-- Responsive datatable examples -->
+<link href="../plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div id="wrapper">
+        <!-- Top Bar Start -->
+        <div class="topbar">
+            <!-- LOGO -->
+            <div class="topbar-left"><a href="index.html" class="logo"><span><img src="assets/images/logo-light.png"
+                            alt="" height="18"> </span><i><img src="assets/images/logo-sm.png" alt=""
+                            height="22"></i></a></div>
+            <nav class="navbar-custom">
+                <ul class="navbar-right list-inline float-right mb-0">
+
+                </ul>
+                <ul class="list-inline menu-left mb-0">
+                    <li class="float-left">
+                        <button class="button-menu-mobile open-left waves-effect"><i class="mdi mdi-menu"></i></button>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+        <!-- Top Bar End -->
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left side-menu">
+            <div class="slimscroll-menu" id="remove-scroll">
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu" id="side-menu">
+                        <li class="menu-title">Main</li>
+                        <li><a href="/accountant" class="waves-effect"><i class="ti-home"></i>
+                                <span>Gratuity Record</span></a></li>
+                        <li><a href="/accountant-pensioner" class="waves-effect"><i class="ti-calendar"></i><span>
+                                    Pensioner Records</span></a></li>
+
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+                <div class="clearfix"></div>
+            </div>
+            <!-- Sidebar -left -->
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="page-title-box">
+                        <div class="row align-items-center">
+                            <div class="col-sm-6">
+                                <h4 class="page-title">Gratuity Record</h4>
+
+                            </div>
+                            <!--  -->
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+
+
+
+                                    <table id="datatable-buttons"
+                                        class="table table-striped table-bordered dt-responsive nowrap"
+                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Graditute Status</th>
+                                                <th>Amount </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% for(var i=0; i<PensionRecords.length; i++) {%>
+                                            <tr>
+                                                <td><%= PensionRecords[i].name %></td>
+                                                <td><%= PensionRecords[i].gratuity_status %></td>
+                                                <td><%= PensionRecords[i].gratuity_amount %></td>
+                                            </tr>
+                                            <% } %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- container-fluid -->
+
+            </div>
+            <!-- content -->
+
+            <footer class="footer">© 2019 Veltrix <span class="d-none d-sm-inline-block">- Crafted with <i
+                        class="mdi mdi-heart text-danger"></i> by Themesbrand</span>.</footer>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+    <!-- jQuery  -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <script src="assets/js/waves.min.js"></script>
+    <!-- Required datatable js -->
+    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Buttons examples -->
+    <script src="plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="plugins/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="plugins/datatables/jszip.min.js"></script>
+    <script src="plugins/datatables/pdfmake.min.js"></script>
+    <script src="plugins/datatables/vfs_fonts.js"></script>
+    <script src="plugins/datatables/buttons.html5.min.js"></script>
+    <script src="plugins/datatables/buttons.print.min.js"></script>
+    <script src="plugins/datatables/buttons.colVis.min.js"></script>
+    <!-- Responsive examples -->
+    <script src="plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables/responsive.bootstrap4.min.js"></script>
+    <!-- Datatable init js -->
+    <script src="assets/pages/datatables.init.js"></script>
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+</body>
+<!-- Mirrored from themesbrand.com/veltrix/layouts/vertical-dark/pages-blank.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 12 Jan 2020 22:29:16 GMT -->
+
+</html>
