@@ -77,68 +77,81 @@
                     </div>
                     <!-- end row -->
 
-                    <div class="card mini-stat bg-primary text-white">
-                        <div class="card-body">
-                            <div class="mb-4">
-                                <div class="float-left mini-stat-img mr-4"><img
-                                        src="/assets/images/services-icon/01.png" alt=""></div>
-                                <h5 class="font-16 text-uppercase mt-0 text-white-50">Orders</h5>
-                                <h4 class="font-500">1,685 <i class="mdi mdi-arrow-up text-success ml-2"></i>
-                                </h4>
-                                <div class="mini-stat-label bg-success">
-                                    <p class="mb-0">+ 12%</p>
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card mini-stat bg-primary text-white">
+                                <div class="card-body">
+                                    <div class="mb-4">
+
+                                        <h5 class="font-16 text-uppercase mt-0 text-white-100">Graditute</h5>
+                                        <h4 class="font-500">N<%= PensionRecords[1].gratuity_amount %> <i
+                                                class="mdi mdi-arrow-up text-success ml-2"></i>
+                                        </h4>
+
+
+                                        <% if(status) {%>
+                                        <div class="mini-stat-label bg-success">
+                                            <p class="mb-0">Paid</p>
+                                        </div>
+                                        <% }else{ %>
+                                        <div class="mini-stat-label bg-danger">
+                                            <p class="mb-0">Not Paid</p>
+                                        </div>
+                                        <% } %>
+
+                                    </div>
+
                                 </div>
                             </div>
-                            <div class="pt-2">
-                                <div class="float-right"><a href="#" class="text-white-50"><i
-                                            class="mdi mdi-arrow-right h5"></i></a></div>
-                                <p class="text-white-50 mb-0">Since last month</p>
-                            </div>
                         </div>
+
+
+
                     </div>
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
 
+                            <h4 class="mt-0 header-title">Your Pension Record</h4>
 
-
-                                <table id="datatable-buttons"
-                                    class="table table-striped table-bordered dt-responsive nowrap"
-                                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Graditute Status</th>
-                                            <th>Months</th>
-                                            <th>Amount </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <% if(PensionRecords != null) {%>
-                                        <% for(var i=0; i<PensionRecords.length; i++) {%>
-                                        <tr>
-                                            <td><%= PensionRecords[i].name %></td>
-                                            <td><%= PensionRecords[i].gratuity_status %></td>
-                                            <td><%=PensionRecords[i].months %></td>
-                                            <td><%= PensionRecords[i].gratuity_amount %></td>
-                                        </tr>
-                                        <% } %>
-                                        <% } %>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <table id="datatable-buttons"
+                                class="table table-striped table-bordered dt-responsive nowrap"
+                                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Graditute Status</th>
+                                        <th>Months</th>
+                                        <th>Amount </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if(PensionRecords != null) {%>
+                                    <% for(var i=0; i<PensionRecords.length; i++) {%>
+                                    <tr>
+                                        <td><%= PensionRecords[i].name %></td>
+                                        <td><%= PensionRecords[i].gratuity_status? "Paid": "Not Paid" %></td>
+                                        <td><%=PensionRecords[i].months %></td>
+                                        <td><%= PensionRecords[i].gratuity_amount %></td>
+                                    </tr>
+                                    <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- container-fluid -->
         </div>
-        <!-- content -->
-        <footer class="footer">© 2019 Veltrix <span class="d-none d-sm-inline-block">- Crafted with <i
-                    class="mdi mdi-heart text-danger"></i> by Themesbrand</span>.</footer>
+        <!-- container-fluid -->
+    </div>
+    <!-- content -->
+    <footer class="footer">© 2019 Veltrix <span class="d-none d-sm-inline-block">- Crafted with <i
+                class="mdi mdi-heart text-danger"></i> by Themesbrand</span>.</footer>
     </div>
     <!-- ============================================================== -->
     <!-- End Right content here -->

@@ -102,6 +102,12 @@
                                                 <td><%= PensionRecords[i].name %></td>
                                                 <td><%= PensionRecords[i].gratuity_status %></td>
                                                 <td><%= PensionRecords[i].gratuity_amount %></td>
+                                                <%if(!PensionRecords[i].gratuity_status) {%>}
+                                                <td>
+                                                    <div><a href="/pay/<%= PensionRecords[i].pensioner_id %>"
+                                                            class="btn btn-primary btn-sm">Pay</a></div>
+                                                </td>
+                                                <% } %>
                                             </tr>
                                             <% } %>
                                         </tbody>

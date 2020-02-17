@@ -19,7 +19,10 @@ const pensionerRecordSchema = new Schema({
 		type: Boolean,
 		default: false
 	},
-
+	pensioner_id: {
+		type: String,
+		required: true
+	},
 	date_paid: { type: Date, default: Date.now },
 	retirement_date: { type: Date, required: true }
 	

@@ -208,11 +208,14 @@
                                                     <label for="example-text-input"
                                                         class="col-sm-2 col-form-label">Name</label>
                                                     <div class="col-sm-10">
-                                                        <select class="form-control" name="name">
+                                                        <select class="form-control" id="selectName" name="name">
                                                             <% for(var i=0; i<Users.length; i++) {%>
-                                                            <option><%=Users[i].name%></option>
+                                                            <option value="<%=Users[i]._id%>"><%=Users[i].name%>
+                                                            </option>
                                                             <% } %>
+
                                                         </select>
+
                                                     </div>
                                                 </div>
                                             </div>

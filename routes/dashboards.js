@@ -25,6 +25,15 @@ router.get("/admin", (req, res) => {
 	})
 	
 });
+
+router.get("/pay/?:id", (req, res) => {
+	const id = req.params.id;
+	PensionerRecord.updateMany({ pensioner_id: id}, { gratuity_status: true }, (err, data) => {
+		return console.error(err);
+		
+	})
+	res.redirect("/accountant");
+})
 router.get("/accountant", (req, res) => {
 	PensionerRecord.find({}, (err, PensionRecords) => {
 		if (err) return console.log(err);
@@ -61,15 +70,18 @@ router.get("/pensioner/?:id", async(req, res) => {
 		PensionerRecord.find({ name: user.name }, (err, PensionRecords) => {
 
 			if (err) return console.error(err);
+			var status;
 			for (let index = 0; index < PensionRecords.length; index++) {
 
 				var n = month[new Date(PensionRecords[index].retirement_date).getMonth()];
-
+				status = PensionRecords[index].gratuity_status;
+			
 				PensionRecords[index].months = n;
 				console.log(PensionRecords[index].months)
 
 			}
-			res.render("pensionerDashboard.ejs", { user,PensionRecords });
+		
+			res.render("pensionerDashboard.ejs", { user,PensionRecords, status });
 		})
 		
 		
